@@ -818,7 +818,11 @@
 
 const revealElements = document.querySelectorAll('.reveal');
 
-if ('IntersectionObserver' in window) {
+if (window.innerWidth <= 768) {
+  revealElements.forEach(el => {
+    el.classList.add('visible');
+  });
+} else if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -835,7 +839,7 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach(el => {
     el.classList.add('visible');
   });
-}
+} 
 
     // FAQ Accordion Controls
     const faqItems = document.querySelectorAll('.faq-item');

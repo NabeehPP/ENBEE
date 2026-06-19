@@ -835,7 +835,7 @@ if ('IntersectionObserver' in window) {
     const submitBtn = document.getElementById('formSubmitBtn');
 
     contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+      //e.preventDefault();
       
       const submitText = submitBtn.querySelector('span');
       const originalText = submitText.textContent;
@@ -850,20 +850,8 @@ if ('IntersectionObserver' in window) {
         submitBtn.style.borderColor = '#10B981';
         submitBtn.style.color = '#FFFFFF';
         
-        // Custom mailto redirection with details as fallback
-        const name = document.getElementById('name').value;
-        const business = document.getElementById('business').value;
-        const niche = document.getElementById('niche').value;
-        const pack = document.getElementById('package').value;
-        const message = document.getElementById('message').value;
-
-        const mailSubject = encodeURIComponent(`ENBEE Enquiry: ${business}`);
-        const mailBody = encodeURIComponent(`Hi ENBEE,\n\nI would like to enquire about building a website.\n\nDetails:\n- Name: ${name}\n- Business Name: ${business}\n- Niche: ${niche}\n- Plan: ${pack}\n- Message: ${message}\n\nThanks!`);
-        
-        // Open user's email client
-        window.location.href = `mailto:enbeewebs@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-
         contactForm.reset();
+   
 
         setTimeout(() => {
           submitText.textContent = originalText;

@@ -1961,3 +1961,14 @@ footer {
     padding: 32px 24px;
   }
 }
+@media (max-width: 768px) {
+  .reveal,
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3 {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

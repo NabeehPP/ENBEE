@@ -1,51 +1,40 @@
 /* ─── DESIGN SYSTEM VARIABLES (LIGHT THEME) ─── */
 :root {
-  /* Background Colors */
-  --bg-deep: #ffffff;
-  --bg-surface: #f8f8f8;    /* Warm linen light gray */
-  --bg-card: rgba(255, 255, 255, 0.85); /* White glassmorphism */
-  --bg-card-hover: rgba(255, 255, 255, 0.98);
-  
-  /* Text Colors (Charcoal for readability on light BG) */
-   --text-primary: #0a0a0a;
-  --text-secondary: #6b7280;
+  :root {
+  /* Backgrounds */
+  --bg-deep: #FAFAF8;
+  --bg-surface: #FFFFFF;
+  --bg-card: rgba(255,255,255,0.85);
+  --bg-card-hover: rgba(255,255,255,0.98);
 
-  --gold-primary: #EAB308;
-  --gold-dark: #A16207;
+  /* Gold Accent */
+  --gold-primary: #C9A227;
+  --gold-light: #D4AF37;
+  --gold-dark: #9B7B17;
+  --gold-glow: rgba(201,162,39,0.08);
 
+  /* Typography */
+  --text-primary: #0A0A0A;
+  --text-secondary: #52525B;
+  --text-muted: #71717A;
+  --text-white: #FFFFFF;
 
-  --border: #e5e7eb;
-  
-  /* Grays for Borders & UI */
-  --gray-100: #F1F5F9;
-  --gray-200: #E2E8F0;
-  --gray-300: #CBD5E1;
-  --gray-400: #94A3B8;
-  --gray-800: #1E293B;
-  --gray-900: #0F172A;
-  
-  /* Fonts */
-  --font-title: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-text: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  
-  /* Borders & Shadows */
-  --border: 1px solid rgba(15, 23, 42, 0.08);
-  --border-gold: 1px solid rgba(234, 179, 8, 0.25);
-  --border-gold-hover: 1px solid rgba(234, 179, 8, 0.55);
-  
-  --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.03);
-  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.1), 0 0 30px rgba(234, 179, 8, 0.03);
-  
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
-  --radius-round: 100px;
-  
-  /* Transition */
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Borders */
+  --border-color: rgba(0,0,0,0.08);
+  --border-color-hover: rgba(0,0,0,0.14);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.03);
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.08);
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --radius-pill: 999px;
+}
 }
 
 /* ─── RESET & BASE STYLES ─── */

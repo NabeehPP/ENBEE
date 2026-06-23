@@ -89,38 +89,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ─── BACKGROUND AMBIENT GLOWS ─── */
-.bg-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(50px);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.15;
-  mix-blend-mode: multiply;
-}
-.bg-glow-1 {
-  top: 10%;
-  right: -5%;
-  width: 500px;
-  height: 500px;
-  background: var(--gold-light);
-  animation: float-slow 20s infinite ease-in-out alternate;
-}
-.bg-glow-2 {
-  top: 45%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: var(--gold-primary);
-  animation: float-slow 25s infinite ease-in-out alternate-reverse;
-}
+.bg-glow-1,
+.bg-glow-2,
 .bg-glow-3 {
-  bottom: 15%;
-  right: -5%;
-  width: 450px;
-  height: 450px;
-  background: var(--gold-light);
-  animation: float-slow 18s infinite ease-in-out alternate;
+    background: rgba(0,0,0,0.015);
 }
 
 @keyframes float-slow {

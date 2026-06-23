@@ -10,7 +10,7 @@
   --gold-primary: #C9A227;
   --gold-light: #D4AF37;
   --gold-dark: #9B7B17;
-  --gold-glow: rgba(201,162,39,0.08);
+  --gold-glow: rgba(201,162,39,0.025);
 
   /* Typography */
   --text-primary: #0A0A0A;

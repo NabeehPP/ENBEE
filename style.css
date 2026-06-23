@@ -1,6 +1,5 @@
 /* ─── DESIGN SYSTEM VARIABLES (LIGHT THEME) ─── */
 :root {
-  :root {
   /* Backgrounds */
   --bg-deep: #FAFAF8;
   --bg-surface: #FFFFFF;
@@ -34,7 +33,6 @@
   --radius-lg: 28px;
   --radius-xl: 40px;
   --radius-pill: 999px;
-}
 }
 
 /* ─── RESET & BASE STYLES ─── */

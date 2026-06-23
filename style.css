@@ -1,8 +1,8 @@
 /* ─── DESIGN SYSTEM VARIABLES (LIGHT THEME) ─── */
 :root {
   /* Background Colors */
-  --bg-deep: #FCFCFA;       /* Warm Ivory/Alabaster white */
-  --bg-surface: #F5F5F0;    /* Warm linen light gray */
+  --bg-deep: #ffffff;
+  --bg-surface: #f8f8f8;    /* Warm linen light gray */
   --bg-card: rgba(255, 255, 255, 0.85); /* White glassmorphism */
   --bg-card-hover: rgba(255, 255, 255, 0.98);
   

@@ -606,32 +606,6 @@ nav.scrolled {
 
 
 
-.mouse-icon {
-  width: 26px;
-  height: 40px;
-  border: 2px solid var(--gray-400);
-  border-radius: 13px;
-  display: block;
-  position: relative;
-}
-
-.mouse-wheel {
-  width: 4px;
-  height: 8px;
-  background: var(--gold-dark);
-  border-radius: 2px;
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scroll-wheel 1.6s infinite ease-in-out;
-}
-
-@keyframes scroll-wheel {
-  0% { transform: translate(-50%, 0); opacity: 1; }
-  100% { transform: translate(-50%, 14px); opacity: 0; }
-}
-
 /* ─── SOCIAL PROOF SECTION (DARK CONTRAST BANNER) ─── */
 .social-proof {
   padding: 80px 24px;

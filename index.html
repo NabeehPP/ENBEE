@@ -7,7 +7,7 @@
   <meta name="description" content="ENBEE creates high-converting, modern websites for local businesses — resorts, restaurants, clinics, and salons. More calls, bookings, and customers in Kerala and beyond.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,14 +38,14 @@
         <a href="mailto:enbeewebs@gmail.com" class="nav-cta-secondary">Email Us</a>
         <a href="#contact" class="nav-cta">Get Started</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
     <button class="close-btn" id="closeMenu" aria-label="Close menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
@@ -823,18 +823,36 @@
     const closeMenu = document.getElementById('closeMenu');
     const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-cta');
 
-    hamburger.addEventListener('click', () => {
+    const openMobileMenu = () => {
       mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden'; // Stop page scrolling
-    });
+    };
 
     const closeMobileMenu = () => {
       mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = ''; // Resume page scrolling
     };
 
+    hamburger.addEventListener('click', openMobileMenu);
     closeMenu.addEventListener('click', closeMobileMenu);
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    document.addEventListener('click', (event) => {
+      if (!mobileMenu.classList.contains('open')) return;
+      if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
 
     document.documentElement.classList.add('js-enabled');
 

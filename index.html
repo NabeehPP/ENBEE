@@ -44,6 +44,39 @@
     </div>
   </nav>
 
+  <!-- Floating Launch Offer -->
+<div class="launch-offer">
+    <button class="offer-close" aria-label="Close">&times;</button>
+
+    <div class="offer-badge">
+        🚀 Founding Client Offer
+    </div>
+
+    <h3>Premium Business Websites</h3>
+
+    <div class="offer-price">
+        <span class="price">Starting at ₹2,999</span>
+        <span class="old-price">₹4,999</span>
+    </div>
+
+    <div class="offer-bonus">
+        <span class="bonus-icon">✨</span>
+        <div>
+            <strong>Exclusive Founding Bonus</strong>
+            <p>12 Months of Complimentary Website Care</p>
+        </div>
+    </div>
+
+    <p class="offer-note">
+        Available only for our first
+        <strong>limited clients.</strong>
+    </p>
+
+    <a href="#contact" class="offer-btn">
+        Reserve My Slot
+    </a>
+</div>
+
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
     <button class="close-btn" id="closeMenu" aria-label="Close menu">
@@ -810,6 +843,27 @@
         nav.classList.remove('scrolled');
       }
     });
+
+    //launch Offer Popup Controls
+    const launchOffer = document.querySelector(".launch-offer");
+const closeOffer = document.querySelector(".offer-close");
+
+// Don't show again during this browser session
+if (sessionStorage.getItem("offerClosed")) {
+    launchOffer.style.display = "none";
+}
+
+closeOffer.addEventListener("click", () => {
+    launchOffer.style.opacity = "0";
+    launchOffer.style.transform = "translateX(-50%) translateY(30px)";
+    launchOffer.style.pointerEvents = "none";
+
+    sessionStorage.setItem("offerClosed", "true");
+
+    setTimeout(() => {
+        launchOffer.style.display = "none";
+    }, 300);
+});
 
     // Mobile Menu Controls
     const hamburger = document.getElementById('hamburger');
